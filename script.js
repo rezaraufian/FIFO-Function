@@ -1,18 +1,29 @@
-// Push Function
-let push = function (array, element){
-	let temp = []
-	for (var i =0; i <= array.lenghth; i++) {
-		temp[i+1] = array[i]
+// Push function 
+let push = function(array, element){
+	try{
+		let temp = []
+		temp[0] = element
+		for (let i = 0; i <= array.length; i++) {
+			temp[i+1] = array[i]
+		}
+		return temp
 	}
-	temp[0] = array
-	temp[1] =  element
-	return temp;
+	catch(err){
+		console.log("Error has occured" + err.stack)
+	}
 }
-// Pull Function
+//Pull function
 let pull = function(array){
-	let temp= []
-	for (var i =0; i <= array.lenghth-1; i++) {
-		temp[i] = array[i-1]
+	try{
+		console.log("The last index value is:" + array[array.length-1])
+		let temp = [] 
+		for (let i = 0; i <= array.length; i++) {
+			temp[i] = array[i]
+		}
+		temp.length = array.length-1
+		return temp
 	}
-	return temp
+	catch(err){
+		console.log("Error has occured" + err.stack)
+	}
 }
